@@ -1,0 +1,4 @@
+Gemini,www.Gemini.com,Bitcoin
+Coinbase,www.Coinbase.com,Ethereum
+Crypto,www.Crypto.com,Cardano
+
