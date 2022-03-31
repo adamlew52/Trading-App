@@ -1,0 +1,14 @@
+$ GENERAL TERMS
+crypto, crypto coin, virtual curren, currency, currencies, blockchain, 
+
+
+$ SPECIFIC COINS
+Bitcoin, BTC, 
+Ethereum, ether, ETH, 
+cardano, ADA, 
+Solana
+Avalanche
+Polygon
+
+$ ACQUISITION 
+mining

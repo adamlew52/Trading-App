@@ -1,4 +1,6 @@
+from codeop import CommandCompiler
 import sqlite3
+import re
 
 SiteNames = []
 
@@ -10,29 +12,35 @@ def getSiteData():
 
     siteDataArray = []
 
-    for siteData in testdata:
-        line = testdata.readline(siteData)
+    count = 0
+    for allLines in testdata:
+        count = count + 1
+        print("this is iteration " + str(count))
+        line = testdata.readline()
         for section in line:
+
+            commaCount = line.count(',')
             firstCommaLocation = line.find(',')
             secondCommaLocation = line.find(',', firstCommaLocation + 1)
-            thirdCommaLocation = line.find(',', secondCommaLocation + 1)
 
-            print("\nthe first comma location is " + firstCommaLocation)
-            print("\nthe second comma location is " + secondCommaLocation)
-            print("\nthe third comma location is " + thirdCommaLocation)
+            print("\nthe comma count is: " + str(commaCount))
+            print("\nthe first comma location is: " + str(firstCommaLocation))
+            print("\nthe second comma location is: " + str(secondCommaLocation))
+            
 
-            SiteName = line.read(firstCommaLocation)
-            url = line.read(secondCommaLocation)
-            currency = line.read(thirdCommaLocation)
+            temporaryLineData = line.split(",",2)
 
-            print("\nthe SiteName is " + SiteName)
-            print("\nthe url is " + url)
-            print("\nthe currency is " + currency)
+            SiteName = temporaryLineData[0]
+            url = temporaryLineData[1]
+            currency = temporaryLineData[2]
+
+            print("\nthe SiteName is " + str(SiteName))
+            print("\nthe url is " + str(url))
+            print("\nthe currency is " + str(currency))
 
             siteDataArray.append(section)
 
     testdata.close() 
-
     return siteDataArray
 
 
