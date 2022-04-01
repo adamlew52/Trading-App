@@ -62,7 +62,7 @@ def addToDB(siteDataArray):
     yRef = 0
     for names in siteDataArray:
         siteNames = siteDataArray[yRef][0]
-        print(siteNames)
+        print("SiteNames contents: ", siteNames)
         yRef += 1  
 
     #Parse and add the url
@@ -70,14 +70,14 @@ def addToDB(siteDataArray):
     yRef = 0
     for webpage in siteDataArray:
         url = siteDataArray[yRef][1]
-        print(url)
+        print("url contents: ", url)
         yRef += 1  
     
     #Parse and add the currency
     yRef = 0
     for coinName in siteDataArray:
         currency = siteDataArray[yRef][2]
-        print(currency)
+        print("currency contents: ", currency)
         yRef += 1  
     
     c.execute('''CREATE TABLE IF NOT EXISTS 'Test Info Storage 2' (
@@ -85,7 +85,7 @@ def addToDB(siteDataArray):
         URL TEXT,
         Currency_Name TEXT)''')
 
-    c.execute("INSERT INTO 'Test Info Storage' VALUES (?,?,?)", (siteNames,url,currency))
+    c.execute("INSERT INTO 'Test Info Storage 2' VALUES (?,?,?)", (siteNames,url,currency))
 
     conn.commit()
     conn.close()

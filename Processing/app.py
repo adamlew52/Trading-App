@@ -1,4 +1,6 @@
 import DatabaseControl
 
-print(DatabaseControl.addToDB(DatabaseControl.getSiteData()))
+
+tempSiteData = DatabaseControl.getSiteData()
+print(DatabaseControl.addToDB(tempSiteData))
 #DatabaseControl.addSiteToList(SiteName)
